@@ -11,6 +11,15 @@
     <script src="{{asset('assets/jquery-3.5.1.min.js')}}"></script>
 </head>
 <body>
+    <style>
+        body{
+            background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+            height: 100%;
+        }
+        h3{
+            color: white;
+        }
+    </style>
     @yield('content')
     {{-- JS --}}
     <script src="{{asset('assets/bootstrap/js/bootstrap.bundle.min.js')}}"></script>

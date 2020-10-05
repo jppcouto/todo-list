@@ -3,7 +3,7 @@
 @section('content')
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
-      <h1 class="display-4">To-Do List</h1>
+      <h1 class="display-4">JotaTask</h1>
             <p class="lead">A simple To-Do List powered by Laravel Framework and developed by João Couto.</p>
             <div class="my-4">
                 <a href="{{ route('new_task') }}" class="btn btn-outline-primary">
@@ -38,6 +38,7 @@
             @else
                 <div class="shadow p-3 mb-5 bg-white rounded">Okapa!</div>
             @endif
+            <!--<h1 style="color: #5155de; font-size: 80px;margin-bottom:-80px">JOTATASK</h1>-->
         </div>
     </div>
 

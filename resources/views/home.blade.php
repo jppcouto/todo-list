@@ -47,7 +47,34 @@
                             @foreach ($tasks as $t)
                                 <tr>
                                     <td style="width: 70%">{{$t->task}}</td>
-                                    <td>[icones]</td>
+                                    <td>
+                                        {{-- Done/not done --}}
+                                        @if ($t->done == null)
+                                            <a href="" class="btn btn-primary btn-sm">
+                                                <i class="fa fa-check"></i>
+                                            </a>
+                                        @else
+                                            <a href="" class="btn btn-danger btn-sm">
+                                                <i class="fa fa-times"></i>
+                                            </a>
+                                        @endif
+
+                                        {{-- editar --}}
+                                        <a href="" class="btn btn-warning btn-sm">
+                                            <i class="fa fa-pencil"></i>
+                                        </a>
+
+                                        {{-- visivel/invisivel --}}
+                                        @if ($t->visible === 1)
+                                            <a href="" class="btn btn-danger btn-sm">
+                                                <i class="fa fa-eye-slash"></i>
+                                            </a>
+                                        @else
+                                            <a href="" class="btn btn-primary btn-sm">
+                                                <i class="fa fa-eye"></i>
+                                            </a>
+                                        @endif
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

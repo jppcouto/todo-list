@@ -11,6 +11,7 @@ class Main extends Controller
     {
         //get available tasks
         $tasks = Task::all();
+        //$tasks = Task::where('Visible',1)->get();
         return view('home',['tasks' => $tasks]);
     }
 

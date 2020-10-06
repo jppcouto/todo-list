@@ -20,3 +20,4 @@ Route::get('/', function () {
 Route::get('/', 'Main@home')->name('home');
 
 Route::get('/new_task', 'Main@new_task')->name('new_task');
+Route::post('/new_task_submit', 'Main@new_task_submit')->name('new_task_submit');

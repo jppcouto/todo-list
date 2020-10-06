@@ -18,6 +18,6 @@ class Main extends Controller
     public function new_task() 
     {
         //return view('new');
-        echo 'new task';
+        return view('new_task');
     }
 }

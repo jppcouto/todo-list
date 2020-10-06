@@ -33,10 +33,27 @@
             </div>
             <hr>-->
             @if($tasks->count() === 0)
-                <div class="shadow p-3 mb-5 bg-white rounded">Não existem tarefas disponíveis</div>
+                <div class="shadow p-3 mb-5 bg-white rounded">Não existem tarefas a realizar</div>
 
             @else
-                <div class="shadow p-3 mb-5 bg-white rounded">Okapa!</div>
+                <div class="shadow p-3 mb-5 bg-white rounded">
+                    <table class="table table-striped">
+                        <thead class="thead-dark">
+                            <th>Tasks</td>
+                            <th>Actions</td>  
+                        </thead>
+
+                        <tbody>
+                            @foreach ($tasks as $t)
+                                <tr>
+                                    <td style="width: 70%">{{$t->task}}</td>
+                                    <td>[icones]</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                    <p>At the moment you added <strong>{{$tasks->count()}}</strong> task(s).</p>
+                </div>
             @endif
             <!--<h1 style="color: #5155de; font-size: 80px;margin-bottom:-80px">JOTATASK</h1>-->
         </div>

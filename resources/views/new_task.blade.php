@@ -14,7 +14,7 @@
             <form class="form-inline" action="{{route('new_task_submit')}}" method="post">
                 @csrf
                 <div class="form-group mx-sm-1 mb-2">
-                    <input type="text" class="form-control" placeholder="Nova tarefa">
+                    <input type="text" name="text_new_task" class="form-control" placeholder="Nova tarefa">
                 </div>
                 <button type="submit" class="btn btn-primary mb-2">Adicionar</button>
             </form>

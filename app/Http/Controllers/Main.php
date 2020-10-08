@@ -21,8 +21,9 @@ class Main extends Controller
         return view('new_task');
     }
 
-    public function new_task_submit() 
+    public function new_task_submit(Request $r) 
     {
-        echo 'submetido!';
+        $texto = $r->input('text_new_task');
+        echo $texto;
     }
 }

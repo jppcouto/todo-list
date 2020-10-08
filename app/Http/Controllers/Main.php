@@ -20,4 +20,9 @@ class Main extends Controller
         //return view('new');
         return view('new_task');
     }
+
+    public function new_task_submit() 
+    {
+        echo 'submetido!';
+    }
 }

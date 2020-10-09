@@ -11,7 +11,8 @@ class Main extends Controller
     {
         //get available tasks
         $tasks = Task::all();
-        //$tasks = Task::where('Visible',1)->get();
+        //$tasks = Task::orderBy('created_at','desc')->get();
+        $tasks = Task::where('Visible',1)->get();
         return view('home',['tasks' => $tasks]);
     }
 
@@ -45,9 +46,12 @@ class Main extends Controller
         //no objeto $task existe uma coluna chamada 'task' que será igual ao valor do input
         $task->task = $new_task;
 
+        //nova tarefa ficará invisivel.
+        //$task->visible = 0;
+
         //inserção do registo na BD
         $task->save();
 
-        echo 'Done!';
+        return redirect()->route('home');
     }
 }

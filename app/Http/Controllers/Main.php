@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Task;
+use DateTime;
 use Illuminate\Http\Request;
 
 class Main extends Controller
@@ -52,6 +53,15 @@ class Main extends Controller
         //inserção do registo na BD
         $task->save();
 
+        return redirect()->route('home');
+    }
+
+    public function task_done($id) 
+    {
+        //update
+        $task = Task::find($id);
+        $task->done = new DateTime();
+        $task->save();
         return redirect()->route('home');
     }
 }

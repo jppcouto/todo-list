@@ -41,7 +41,7 @@
                                 <td>
                                     {{-- Done/not done --}}
                                     @if ($t->done == null)
-                                        <a href="" class="btn btn-success btn-sm">
+                                        <a href="{{route('task_done', ['id' => $task->id])}}" class="btn btn-success btn-sm">
                                             <i class="fa fa-check"></i>
                                         </a>
                                     @else

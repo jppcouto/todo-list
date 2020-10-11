@@ -41,11 +41,11 @@
                                 <td>
                                     {{-- Done/not done --}}
                                     @if ($t->done == null)
-                                        <a href="{{route('task_done', ['id' => $task->id])}}" class="btn btn-success btn-sm">
+                                        <a href="{{route('task_done', ['id' => $t->id])}}" class="btn btn-success btn-sm">
                                             <i class="fa fa-check"></i>
                                         </a>
                                     @else
-                                        <a href="" class="btn btn-danger btn-sm">
+                                    <a href="{{route('task_undone', ['id' => $t->id])}}" class="btn btn-danger btn-sm">
                                             <i class="fa fa-times"></i>
                                         </a>
                                     @endif

@@ -58,9 +58,18 @@ class Main extends Controller
 
     public function task_done($id) 
     {
-        //update
+        //update the task to DONE
         $task = Task::find($id);
         $task->done = new DateTime();
+        $task->save();
+        return redirect()->route('home');
+    }
+
+    public function task_undone($id) 
+    {
+        //update the task to UNDONE
+        $task = Task::find($id);
+        $task->done = null;
         $task->save();
         return redirect()->route('home');
     }

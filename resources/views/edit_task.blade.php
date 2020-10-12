@@ -13,8 +13,10 @@
 
             <form class="form-inline" action="{{route('edit_task_submit')}}" method="post">
                 @csrf
+                <input type="hidden" name="id_task" class="form-control" value="{{$task->id}}">
+
                 <div class="form-group mx-sm-1 mb-2">
-                    <input type="text" name="text_new_task" class="form-control" placeholder="Nova tarefa">
+                    <input type="text" name="text_edit_task" class="form-control" value="{{$task->task}}">
                 </div>
                 <button type="submit" class="btn btn-primary mb-2">Update</button>
             </form>

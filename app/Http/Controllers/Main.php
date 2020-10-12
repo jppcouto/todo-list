@@ -76,7 +76,22 @@ class Main extends Controller
 
     public function edit_task($id) 
     {
-        echo $id;
-        // return view('edit_task');
+        //get selected task
+        $task = Task::find($id);
+
+        //display edit task form
+        return view('edit_task', ['task' => $task]);
+    }
+
+    public function edit_task_submit(request $request) 
+    {
+        $id_task = $request->input('id_task');
+        $edit_task = $request->input('text_edit_task');
+
+        $task = Task::find($id_task);
+        $task->task = $edit_task;
+        $task->save();
+
+        return redirect()->route('home');
     }
 }

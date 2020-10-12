@@ -73,4 +73,10 @@ class Main extends Controller
         $task->save();
         return redirect()->route('home');
     }
+
+    public function edit_task($id) 
+    {
+        echo $id;
+        // return view('edit_task');
+    }
 }

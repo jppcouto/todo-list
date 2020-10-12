@@ -51,7 +51,7 @@
                                     @endif
 
                                     {{-- editar --}}
-                                    <a href="" class="btn btn-warning btn-sm">
+                                    <a href="{{route('edit_task', ['id' => $t->id])}}" class="btn btn-warning btn-sm">
                                         <i class="fa fa-pencil"></i>
                                     </a>
 

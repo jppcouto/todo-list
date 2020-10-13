@@ -57,11 +57,11 @@
 
                                     {{-- visivel/invisivel --}}
                                     @if ($t->visible === 1)
-                                        <a href="" class="btn btn-danger btn-sm">
+                                <a href="{{route('task_invisible',['id'=>$task->id])}}" class="btn btn-danger btn-sm">
                                             <i class="fa fa-eye-slash"></i>
                                         </a>
                                     @else
-                                        <a href="" class="btn btn-primary btn-sm">
+                                        <a href="{{route('task_visible',['id'=>$task->id])}}" class="btn btn-primary btn-sm">
                                             <i class="fa fa-eye"></i>
                                         </a>
                                     @endif

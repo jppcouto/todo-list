@@ -27,3 +27,6 @@ Route::get('task_undone/{id}', 'Main@task_undone')->name('task_undone');
 
 Route::get('edit_task/{id}', 'Main@edit_task')->name('edit_task');
 Route::post('edit_task_submit', 'Main@edit_task_submit')->name('edit_task_submit');
+
+Route::get('task_invisible/{id}', 'Main@task_invisible')->name('task_invisible');
+Route::get('task_visible/{id}', 'Main@task_visible')->name('task_visible');

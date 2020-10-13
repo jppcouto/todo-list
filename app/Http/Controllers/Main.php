@@ -12,8 +12,11 @@ class Main extends Controller
     {
         //get available tasks
         $tasks = Task::all();
-        //$tasks = Task::orderBy('created_at','desc')->get();
-        $tasks = Task::where('Visible',1)->get();
+        
+        $tasks = Task::where('Visible',1)
+                ->orderBy('created_at','desc')->get()
+                ->get();
+
         return view('home',['tasks' => $tasks]);
     }
 
@@ -90,6 +93,24 @@ class Main extends Controller
 
         $task = Task::find($id_task);
         $task->task = $edit_task;
+        $task->save();
+
+        return redirect()->route('home');
+    }
+
+    public function task_invisible($id) 
+    {
+        $task = Task::find($id);
+        $task->visible = 0;
+        $task->save();
+
+        return redirect()->route('home');
+    }
+
+    public function task_visible($id) 
+    {
+        $task = Task::find($id);
+        $task->visible = 1;
         $task->save();
 
         return redirect()->route('home');

@@ -9,7 +9,7 @@
 
 ## About the App
 
-This project is about the development of a simple To-Do List powered by Laravel Framework 8.8.0. The aplication web is still at development (**v1.0.9.dev**).
+This project is about the development of a simple To-Do List powered by Laravel Framework 8.8.0. The aplication web is already working. (**v1.1.0**).
 
 ## License
 

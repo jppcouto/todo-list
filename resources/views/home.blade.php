@@ -14,7 +14,7 @@
                     </path>
                 </svg>
             </a>
-            <a href="{{ route('new_task') }}" class="btn btn-outline-danger">
+            <a href="{{ route('list_invisibles') }}" class="btn btn-outline-danger">
                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-slash-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10.79 12.912l-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7.029 7.029 0 0 0 2.79-.588zM5.21 3.088A7.028 7.028 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474L5.21 3.089z"></path>
                     <path d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829l-2.83-2.829zm4.95.708l-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829z"></path>
@@ -48,12 +48,12 @@
                                 <td>
                                     {{-- Done/not done --}}
                                     @if ($t->done == null)
-                                        <a href="{{route('task_done', ['id' => $t->id])}}" class="btn btn-success btn-sm">
-                                            <i class="fa fa-check"></i>
+                                        <a href="{{route('task_done', ['id' => $t->id])}}" class="btn btn-danger btn-sm">
+                                            <i class="fa fa-times"></i>
                                         </a>
                                     @else
-                                    <a href="{{route('task_undone', ['id' => $t->id])}}" class="btn btn-danger btn-sm">
-                                            <i class="fa fa-times"></i>
+                                        <a href="{{route('task_undone', ['id' => $t->id])}}" class="btn btn-success btn-sm">
+                                            <i class="fa fa-check"></i>
                                         </a>
                                     @endif
 
@@ -64,12 +64,12 @@
 
                                     {{-- visivel/invisivel --}}
                                     @if ($t->visible === 1)
-                                <a href="{{route('task_invisible',['id'=>$t->id])}}" class="btn btn-danger btn-sm">
-                                            <i class="fa fa-eye-slash"></i>
+                                <a href="{{route('task_invisible',['id'=>$t->id])}}" class="btn btn-primary btn-sm">
+                                            <i class="fa fa-eye"></i>
                                         </a>
                                     @else
-                                        <a href="{{route('task_visible',['id'=>$t->id])}}" class="btn btn-primary btn-sm">
-                                            <i class="fa fa-eye"></i>
+                                        <a href="{{route('task_visible',['id'=>$t->id])}}" class="btn btn-danger btn-sm">
+                                            <i class="fa fa-eye-slash"></i>
                                         </a>
                                     @endif
                                 </td>

@@ -18,6 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('/', 'Main@home')->name('home');
+Route::get('/list_invisibles', 'Main@list_invisibles')->name('list_invisibles');
 
 Route::get('/new_task', 'Main@new_task')->name('new_task');
 Route::post('/new_task_submit', 'Main@new_task_submit')->name('new_task_submit');

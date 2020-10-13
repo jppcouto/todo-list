@@ -11,9 +11,17 @@ class Main extends Controller
     public function home() 
     {
         //get available tasks
-        $tasks = Task::all();
-
         $tasks = Task::where('Visible',1)
+                ->orderBy('created_at','desc')
+                ->get();
+
+        return view('home',['tasks' => $tasks]);
+    }
+
+    public function list_invisibles() 
+    {
+        //get invisible tasks
+        $tasks = Task::where('Visible',0)
                 ->orderBy('created_at','desc')
                 ->get();
 

@@ -12,9 +12,9 @@ class Main extends Controller
     {
         //get available tasks
         $tasks = Task::all();
-        
+
         $tasks = Task::where('Visible',1)
-                ->orderBy('created_at','desc')->get()
+                ->orderBy('created_at','desc')
                 ->get();
 
         return view('home',['tasks' => $tasks]);

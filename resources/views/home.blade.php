@@ -49,7 +49,7 @@
                                     {{-- Done/not done --}}
                                     @if ($t->done == null)
                                         <a href="{{route('task_done', ['id' => $t->id])}}" class="btn btn-danger btn-sm">
-                                            <i class="fa fa-times"></i>
+                                            <i class="fas fa-window-close"></i>
                                         </a>
                                     @else
                                         <a href="{{route('task_undone', ['id' => $t->id])}}" class="btn btn-success btn-sm">
@@ -59,7 +59,7 @@
 
                                     {{-- editar --}}
                                     <a href="{{route('edit_task', ['id' => $t->id])}}" class="btn btn-warning btn-sm">
-                                        <i class="fa fa-pencil"></i>
+                                        <i class="fas fa-edit"></i>
                                     </a>
 
                                     {{-- visivel/invisivel --}}
@@ -72,6 +72,11 @@
                                             <i class="fa fa-eye-slash"></i>
                                         </a>
                                     @endif
+
+                                    {{-- remover --}}
+                                    <a href="{{route('task_invisible',['id'=>$t->id])}}" class="btn btn-danger btn-sm">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </a>
                                 </td>
                             </tr>
                         @endforeach

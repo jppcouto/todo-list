@@ -7,7 +7,7 @@
     <title>TO DO LIST</title>
     {{-- CSS --}}
     <link rel="stylesheet" href="{{asset('assets/bootstrap/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/fontawesome/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/fontawesome-free/css/all.min.css')}}">
     <script src="{{asset('assets/jquery-3.5.1.min.js')}}"></script>
 </head>
 <body>
